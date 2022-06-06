@@ -37,15 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'feed',
-    'account',
-    'rest_framework',
-    'rest_framework.authoken'
+    # 'feed',
+    # 'account',
+    # 'rest_framework',
+    # 'rest_framework.authoken'
 ]
 
-AUTH_USER_MODEL = 'account.User'
-FEED = 'feed.Feed'
-COMMENT = 'feed.Comment'
+# AUTH_USER_MODEL = 'account.User'
+# FEED = 'feed.Feed'
+# COMMENT = 'feed.Comment'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'yplabs_backend_task.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': BASE_DIR / 'yplabs_backend_db',
+        'NAME': 'yplabs_backend_task_db',
         'USER': 'root',
         'PASSWORD': '1234',
         'HOST': 'localhost',

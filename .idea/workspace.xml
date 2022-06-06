@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57387059-d9f1-4866-9287-50e797fd918a" name="Changes" comment="[chore] dependency">
-      <change afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/urls.py" afterDir="false" />
+    <list default="true" id="57387059-d9f1-4866-9287-50e797fd918a" name="Changes" comment="[refactor] 정렬 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yplabs_backend_task/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/yplabs_backend_task/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yplabs_backend_task/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yplabs_backend_task/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654508701000</updated>
-      <workItem from="1654508719367" duration="3904000" />
+      <workItem from="1654508719367" duration="7511000" />
     </task>
     <task id="LOCAL-00001" summary="first migrate">
       <created>1654509007098</created>
@@ -153,7 +150,49 @@
       <option name="project" value="LOCAL" />
       <updated>1654511336609</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[chore] urls 설정">
+      <created>1654512659919</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654512659919</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[chore] settings 설정">
+      <created>1654512705405</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654512705405</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[feat] urls 설정">
+      <created>1654512715945</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1654512715945</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[style] error 코드 처리">
+      <created>1654515229390</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1654515229390</updated>
+    </task>
+    <task id="LOCAL-00016" summary="[chore] 시간 설정">
+      <created>1654515389480</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1654515389480</updated>
+    </task>
+    <task id="LOCAL-00017" summary="[refactor] 정렬 수정">
+      <created>1654515805994</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1654515805994</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +220,12 @@
     <MESSAGE value="[feat] models 설정" />
     <MESSAGE value="[feat] views 설정" />
     <MESSAGE value="[chore] dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="[chore] dependency" />
+    <MESSAGE value="[chore] urls 설정" />
+    <MESSAGE value="[chore] settings 설정" />
+    <MESSAGE value="[feat] urls 설정" />
+    <MESSAGE value="[style] error 코드 처리" />
+    <MESSAGE value="[chore] 시간 설정" />
+    <MESSAGE value="[refactor] 정렬 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor] 정렬 수정" />
   </component>
 </project>

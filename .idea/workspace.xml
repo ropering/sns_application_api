@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57387059-d9f1-4866-9287-50e797fd918a" name="Changes" comment="[feat] 앱 생성(account, feed)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yplabs_backend_task/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/yplabs_backend_task/settings.py" afterDir="false" />
+    <list default="true" id="57387059-d9f1-4866-9287-50e797fd918a" name="Changes" comment="[feat] model 설정">
+      <change afterPath="$PROJECT_DIR$/account/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/serializers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2ACLceS0KVLn2flyKv57MwCwJLT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654508701000</updated>
-      <workItem from="1654508719367" duration="1431000" />
+      <workItem from="1654508719367" duration="1558000" />
     </task>
     <task id="LOCAL-00001" summary="first migrate">
       <created>1654509007098</created>
@@ -91,7 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654510016974</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[feat] model 설정">
+      <created>1654510178543</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654510178543</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[feat] model 설정">
+      <created>1654510203283</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654510203283</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +136,7 @@
     <MESSAGE value="[chore] db setting" />
     <MESSAGE value="[chore] mysql 연결" />
     <MESSAGE value="[feat] 앱 생성(account, feed)" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] 앱 생성(account, feed)" />
+    <MESSAGE value="[feat] model 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] model 설정" />
   </component>
 </project>

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'feed',
     'account',
     'rest_framework',
-    # 'rest_framework.authoken'
+    'rest_framework.authtoken'
 ]
 
 AUTH_USER_MODEL = 'account.User'

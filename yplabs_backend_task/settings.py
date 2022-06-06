@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     # 'rest_framework.authoken'
 ]
 
-# AUTH_USER_MODEL = 'account.User'
-# FEED = 'feed.Feed'
-# COMMENT = 'feed.Comment'
+AUTH_USER_MODEL = 'account.User'
+FEED = 'feed.Feed'
+COMMENT = 'feed.Comment'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

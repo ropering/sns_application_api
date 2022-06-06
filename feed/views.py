@@ -10,7 +10,7 @@ from account.models import User
 from .models import Feed, Comment
 from .serializers import FeedSerializer, CommentSerializer
 
-# rest_framework 관련
+# rest_framework 관련 라이브러리
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -52,7 +52,7 @@ class FeedList(APIView):
         paginator = Paginator(feeds, 30)
         feeds = paginator.get_page(page)
 
-        # 여러 개의 객체를 serialization하기 위해 many=True로 설정
+        # 여러 개의 객체를 serialization 하기 위해 many=True 로 설정
         serializer = FeedSerializer(feeds, many=True)
         return Response(serializer.data)
 
@@ -63,12 +63,7 @@ class FeedList(APIView):
         feed.content = request.POST['content']
         feed.user = request.user
         feed.save()
-
-        # serializer = FeedSerializer(data=request.data)
-        # if serializer.is_valid():  # 유효성 검사
-        #     serializer.save()  # 저장
-        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(status=status.HTTP_400_BAD_REQUEST, data=feed)
+        return Response(status=status.HTTP_201_CREATED, data="생성되었습니다")
 
 
 class FeedDetail(APIView):
@@ -79,7 +74,7 @@ class FeedDetail(APIView):
     def get(self, request, pk):
         feed = get_object_or_404(Feed, pk=pk)
         serializer = FeedSerializer(feed)
-        return Response(serializer.data)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     # 단일 피드 수정
     def put(self, request, pk):
@@ -88,15 +83,17 @@ class FeedDetail(APIView):
         if serializer.is_valid():
             if request.user == feed.user:
                 serializer.save()
-                return Response(serializer.data)
+                return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # 단일 피드 삭제
     def delete(self, request, pk):
         feed = get_object_or_404(Feed, pk=pk)
+        # 작성자가 본인이라면
         if request.user == feed.user:
             feed.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+            return Response(data="삭제되었습니다", status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class CommentView(APIView):
@@ -107,7 +104,7 @@ class CommentView(APIView):
     def get(self, request, pk):
         comment = Comment.objects.filter(feed=pk)  # 복수 개 가능
         serializer = CommentSerializer(comment, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     # 게시물에 해당하는 댓글 생성
     def post(self, request, pk):
@@ -116,12 +113,7 @@ class CommentView(APIView):
         comment.feed = Feed(id=pk)
         comment.user = request.user
         comment.save()
-
-        # serializer = CommentSerializer(data=request.data)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data)
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return Response(data="생성되었습니다", status=status.HTTP_200_OK)
 
     # 게시물에 해당하는 단일 댓글 수정
     def put(self, request, pk, comment_pk):
@@ -130,7 +122,7 @@ class CommentView(APIView):
         if serializer.is_valid():
             if request.user == comment.user:
                 serializer.save()
-                return Response(serializer.data)
+                return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # 게시물, 댓글에 해당하는 댓글 삭제
@@ -138,8 +130,8 @@ class CommentView(APIView):
         comment = get_object_or_404(Comment, feed=pk, pk=comment_pk)
         if request.user == comment.user:
             comment.delete()
-            return Response(status=200, data=comment.user)
-        return Response(status=400, data=comment.user)
+            return Response(status=status.HTTP_200_OK, data="삭제되었습니다")
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class FeedLikeView(APIView):
@@ -158,12 +150,12 @@ class FeedLikeView(APIView):
             profile.like_posts.remove(feed)  # 현재 유저의 좋아요한 피드 목록에 현재 피드 추가
             feed.like_count -= 1  # 현재 피드의 좋아요 개수 하향
             feed.save()
-            return Response('remove')
+            return Response('이미 선택하여 제거되었습니다', status=status.HTTP_200_OK)
         else:
             profile.like_posts.add(feed)  # 현재 유저의 좋아요한 피드 목록에 현재 피드 추가
             feed.like_count += 1  # 현재 피드의 좋아요 개수 상향
             feed.save()
-            return Response('add')
+            return Response('추가되었습니다', status=status.HTTP_200_OK)
 
 
 class CommentLikeView(APIView):
@@ -182,9 +174,9 @@ class CommentLikeView(APIView):
             profile.like_comments.remove(comment)
             comment.like_count -= 1
             comment.save()
-            return Response('remove')
+            return Response('이미 선택하여 제거되었습니다', status=status.HTTP_200_OK)
         else:
             profile.like_comments.add(comment)
             comment.like_count += 1
             comment.save()
-            return Response('add')
+            return Response('추가되었습니다', status=status.HTTP_200_OK)

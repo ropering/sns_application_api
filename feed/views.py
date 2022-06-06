@@ -38,10 +38,10 @@ class FeedList(APIView):
         if sort in categories and days.isdigit():
             days = int(days)
             if days > 0:
-                feeds = feeds.filter(created_at__gte=previous_time(days)).order_by('-like_count')
+                feeds = feeds.filter(created_at__gte=previous_time(days)).order_by('-like_count', '-created_at')
         # 좋아요 순 정렬
         elif sort in categories:
-            feeds = feeds.order_by('-like_count')
+            feeds = feeds.order_by('-like_count', '-created_at')
         # 작성 날짜 순 필터링
         elif days.isdigit():
             days = int(days)
